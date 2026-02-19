@@ -81,10 +81,10 @@ function resizeImageAndCanvas(){
     img.width=winWidth;
 
     //If in dosnt fit in Y
-    if(img.height>winHeight){
+    if(img.height>winHeight-100){
         //Adjust heigth so it does
         img.setAttribute("width","auto")
-        img.height=winHeight;
+        img.height=winHeight-100;
     }
 
     
