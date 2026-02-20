@@ -19,6 +19,42 @@ function byId(e){return document.getElementById(e);}
 // takes a string that contains coords eg - "227,307,261,309, 339,354, 328,371, 240,331"
 // draws a line from each co-ord pair to the next - assumes starting point needs to be repeated as ending point.
 
+function refreshText(type){
+    switch(type){
+        case "tree1":
+            console.log("Tree1");
+            var title=document.getElementById("infoTitle");
+            title.innerHTML="Tree 1";
+
+            var textImage=document.getElementById("infoImage");
+            textImage.setAttribute("src","./images/tree1.jpeg");
+
+            var infoList=document.getElementById("infoList");
+            infoList.innerHTML="";
+            infoList.innerHTML=
+                "<li>This is a tree</li>"+
+                "<li>Cant you fucking see?</li>";
+        break;
+
+        case "plant1":
+            console.log("plant1");
+            var title=document.getElementById("infoTitle");
+            title.innerHTML="Plant 1";
+
+            var textImage=document.getElementById("infoImage");
+            textImage.setAttribute("src","./images/plant1.jpeg");
+
+            var infoList=document.getElementById("infoList");
+            infoList.innerHTML="";
+            infoList.innerHTML=
+                "<li>This is not a tree</li>"+
+                "<li>I dont know what the fuck it is</li>"+
+                "<li>Ñam</li>";
+
+        break;
+    }
+}
+
 function myHover(element)
 {
     var areaClass=element.getAttribute("class");
@@ -26,9 +62,11 @@ function myHover(element)
     {
         case 'tree1':
             drawImage("tree1")
+            refreshText("tree1");
             break;
         case "plant1":
             drawImage("plant1");
+            refreshText("plant1");
             break;
     }
 }

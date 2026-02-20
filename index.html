@@ -14,26 +14,41 @@ Retrieved 2026-02-18, License - CC BY-SA 3.0
     </head>
     
     <body onload='myInit()'>
-        <h2>Los Laureles - Paisajismo</h2>
+        
         <!-- The canvas where the magik will happen-->
-        <canvas id='myCanvas'></canvas>     <!-- gets re-positioned in myInit(); -->
+        <div class="container">
+            <div class="header">
+                <h2>Los Laureles - Paisajismo</h2>
+            </div>
+            <div class="map">
+                <canvas id='myCanvas'></canvas>     <!-- gets re-positioned in myInit(); -->
+                
+                <!-- images to be loaded later-->
+                <img id="tree1"  src="./images/tree1.jpeg" width="300" height="227" style="display: none;">
+                <img id="plant1"  src="./images/plant1.jpeg" width="300" height="227" style="display: none;">
+                
+                <!-- Background image-->
+                <img src='./images/PLANTAlaureles.png' usemap='#laurelesMap' class='imgmap_css_container' title='PlanoLaureles' alt='PlanoLaureles' id='PLANTAlaureles' width="1000" height="auto"/>
+                
+                <!-- Map of the background image-->
+                <map id='laurelesMap' name='imgmap_css_container_imgmap201293016112'>
+                    <!-- The coordinates are for a 1000 width image. Resize accordengl-->
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' class="tree1"  coords="203,552,35" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' class="plant1" coords="509,568,52" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' class="plant1" coords="908,122,37" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' class="plant1" coords="498,88,38"  shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' class="tree1"  coords="216,123,35" shape="circle">
+                </map>
+            
+            </div>
+            <div class="text">
+                <h3 id="infoTitle"></h3>
+                <img id="infoImage" src="">
+                <ul id="infoList">
+                </ul>
+            </div>
+        </div>
         
-        <!-- images to be loaded later-->
-        <img id="tree1"  src="./images/tree1.jpeg" width="300" height="227" style="display: none;">
-        <img id="plant1"  src="./images/plant1.jpeg" width="300" height="227" style="display: none;">
-        
-        <!-- Background image-->
-        <img src='./images/PLANTAlaureles.png' usemap='#laurelesMap' class='imgmap_css_container' title='PlanoLaureles' alt='PlanoLaureles' id='PLANTAlaureles' width="1000" height="auto"/>
-        
-        <!-- Map of the background image-->
-        <map id='laurelesMap' name='imgmap_css_container_imgmap201293016112'>
-            <!-- The coordinates are for a 1000 width image. Resize accordengl-->
-            <area onmouseover='myHover(this);' onmouseout='myLeave();' class="tree1"  coords="203,552,35" shape="circle">
-            <area onmouseover='myHover(this);' onmouseout='myLeave();' class="plant1" coords="509,568,52" shape="circle">
-            <area onmouseover='myHover(this);' onmouseout='myLeave();' class="plant1" coords="908,122,37" shape="circle">
-            <area onmouseover='myHover(this);' onmouseout='myLeave();' class="plant1" coords="498,88,38"  shape="circle">
-            <area onmouseover='myHover(this);' onmouseout='myLeave();' class="tree1"  coords="216,123,35" shape="circle">
-        </map>
 
     </body>
 
