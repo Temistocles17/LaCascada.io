@@ -15,66 +15,103 @@ var originalValues={
 
 var dataBase={
     A:{
-        title:"Borde Pileta 1",
-        img:"./images/fotos/A bordo pileta 1.jpg",
+        title:"Borde pileta 1",
+        img:"./images/fotos/A.jpg",
         text:"<li>Aca se pude agregar descripciones</li>"
                 +"<li>O mas data, si pensas que hace falta</li>",
     },
 
     B:{
         title:"Borde pileta 2",
-        img:"./images/fotos/B bordo pileta.jpg",
+        img:"./images/fotos/B.jpg",
         text:"<li>Aca se pude agregar descripciones</li>"
                 +"<li>O mas data, si pensas que hace falta</li>",
     },
 
     C:{
-        title:"Variados de herbaceas, gramineas y cortaderas",
-        img:"./images/fotos/C vista de cantero variado herbaceas , gramineas y cortadera.png",
-        text:"<li>Aca se pude agregar descripciones</li>"
-                +"<li>O mas data, si pensas que hace falta</li>",
+        title:"Cantero",
+        img:"./images/fotos/C.png",
+        text:"<li>Herbaceas</li>"
+                +"<li>Gramineas</li>"
+                +"<li>Cortaderas</li>",
     },
 
     D:{
-        title:"Graminia, salvia y lavanda",
-        img:"./images/fotos/D vista de bordo de gramm salvia y lavanda, costeando camino.png",
-        text:"<li>Aca se pude agregar descripciones</li>"
-                +"<li>O mas data, si pensas que hace falta</li>",
+        title:"Costado del camino",
+        img:"./images/fotos/D.png",
+        text:"<li>Gramineas</li>"
+                +"<li>Salvia</li>"
+                +"<li>Lavanda</li>",
     },
 
     D1:{
         title:"Herbaceas y salvias",
-        img:"./images/fotos/D1  bordo de herbaceas y salvias, equinaceas y lavandas delante.png",
+        img:"./images/fotos/D1.png",
         text:"<li>Aca se pude agregar descripciones</li>"
                 +"<li>O mas data, si pensas que hace falta</li>",
     },
 
     E:{
         title:"Vista borde completo en pendiente",
-        img:"./images/fotos/E vista de bordo completo en pendiente.png",
+        img:"./images/fotos/E.png",
         text:"<li>Aca se pude agregar descripciones</li>"
                 +"<li>O mas data, si pensas que hace falta</li>",
     },
 
     K1:{
         title:"Cortaderas",
-        img:"./images/fotos/K1 cortadder.png",
+        img:"./images/fotos/K1.png",
         text:"<li>Aca se pude agregar descripciones</li>"
                 +"<li>O mas data, si pensas que hace falta</li>",
     },
 
     K2:{
         title:"Cortaderas",
-        img:"./images/fotos/K2cortaderas.png",
+        img:"./images/fotos/K2.png",
         text:"<li>Aca se pude agregar descripciones</li>"
                 +"<li>O mas data, si pensas que hace falta</li>",
     },
 
     J:{
-        title:"Canteros completos, salvias y gramineas",
-        img:"./images/fotos/J canteros completos. atras gramm, salvias equinac ceanotus etc.png",
-        text:"<li>Aca se pude agregar descripciones</li>"
-                +"<li>O mas data, si pensas que hace falta</li>",
+        title:"Canteros",
+        img:"./images/fotos/J.png",
+        text:"<li>Gramineas</li>"+
+                "<li>Salvias</li>",
+             
+    },
+
+    F:{
+        title:"Cantero",
+        img:"./images/fotos/F.png",
+        text:"<li>Gramineas</li>",
+    },
+//----------------------------------------------------------------------------------
+    O:{
+        title:"Arboles Frutales",
+        img:"./images/fotos/O.png",
+        text:"<li>Ciruelo - Manzano</li>"
+                +"<li>Higuera - Damasco</li>",
+    },
+
+    P:{
+        title:"Pinos",
+        img:"./images/fotos/P.png",
+        text:"<li>Cypres Leyland</li>"
+                +"<li>Tuya</li>",
+    },
+
+    M:{
+        title:"Maceteros",
+        img:"./images/fotos/M.png",
+        text:"<li>Hiedras y vincas</li>",
+    },
+
+    H:{
+        title:"Pergola",
+        img:"./images/fotos/H.png",
+        text:"<li>Amphelops - Glicina</li>"
+                +"<li>Ipomeas - Jazmin</li>"
+                +"<li>Rosa trepadora - Santa rita</li>",
     },
 }
 
@@ -90,41 +127,46 @@ function myHover(element)
     var areaClass=element.getAttribute("class");
     switch (areaClass)
     {
-
+        case 'M':
+            refreshData(dataBase.M);
+        break;
+        case 'P':
+            refreshData(dataBase.P);
+        break;
+        case 'O':
+            refreshData(dataBase.O);
+        break;
+        case 'H':
+            refreshData(dataBase.H);
+        break;
+        case 'F':
+            refreshData(dataBase.F);
+        break;
         case 'J':
-            drawImage("J");
             refreshData(dataBase.J);
         break;
         case 'K2':
-            drawImage("K2");
             refreshData(dataBase.K2);
         break;
         case 'K1':
-            drawImage("K1");
             refreshData(dataBase.K1);
         break;
         case 'E':
-            drawImage("E");
             refreshData(dataBase.E);
         break;
         case 'D1':
-            drawImage("D1");
             refreshData(dataBase.D1);
         break;
         case 'D':
-            drawImage("D");
             refreshData(dataBase.D);
         break;
         case 'C':
-            drawImage("C");
             refreshData(dataBase.C);
             break;
         case "B":
-            drawImage("B");
             refreshData(dataBase.B);
         break;
         case 'A':
-            drawImage("A");
             refreshData(dataBase.A);
         break;
     }
