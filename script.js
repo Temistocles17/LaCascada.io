@@ -13,61 +13,120 @@ var originalValues={
     height:"",
 };
 
+var dataBase={
+    A:{
+        title:"Borde Pileta 1",
+        img:"./images/fotos/A bordo pileta 1.jpg",
+        text:"<li>Aca se pude agregar descripciones</li>"
+                +"<li>O mas data, si pensas que hace falta</li>",
+    },
+
+    B:{
+        title:"Borde pileta 2",
+        img:"./images/fotos/B bordo pileta.jpg",
+        text:"<li>Aca se pude agregar descripciones</li>"
+                +"<li>O mas data, si pensas que hace falta</li>",
+    },
+
+    C:{
+        title:"Variados de herbaceas, gramineas y cortaderas",
+        img:"./images/fotos/C vista de cantero variado herbaceas , gramineas y cortadera.png",
+        text:"<li>Aca se pude agregar descripciones</li>"
+                +"<li>O mas data, si pensas que hace falta</li>",
+    },
+
+    D:{
+        title:"Graminia, salvia y lavanda",
+        img:"./images/fotos/D vista de bordo de gramm salvia y lavanda, costeando camino.png",
+        text:"<li>Aca se pude agregar descripciones</li>"
+                +"<li>O mas data, si pensas que hace falta</li>",
+    },
+
+    D1:{
+        title:"Herbaceas y salvias",
+        img:"./images/fotos/D1  bordo de herbaceas y salvias, equinaceas y lavandas delante.png",
+        text:"<li>Aca se pude agregar descripciones</li>"
+                +"<li>O mas data, si pensas que hace falta</li>",
+    },
+
+    E:{
+        title:"Vista borde completo en pendiente",
+        img:"./images/fotos/E vista de bordo completo en pendiente.png",
+        text:"<li>Aca se pude agregar descripciones</li>"
+                +"<li>O mas data, si pensas que hace falta</li>",
+    },
+
+    K1:{
+        title:"Cortaderas",
+        img:"./images/fotos/K1 cortadder.png",
+        text:"<li>Aca se pude agregar descripciones</li>"
+                +"<li>O mas data, si pensas que hace falta</li>",
+    },
+
+    K2:{
+        title:"Cortaderas",
+        img:"./images/fotos/K2cortaderas.png",
+        text:"<li>Aca se pude agregar descripciones</li>"
+                +"<li>O mas data, si pensas que hace falta</li>",
+    },
+
+    J:{
+        title:"Canteros completos, salvias y gramineas",
+        img:"./images/fotos/J canteros completos. atras gramm, salvias equinac ceanotus etc.png",
+        text:"<li>Aca se pude agregar descripciones</li>"
+                +"<li>O mas data, si pensas que hace falta</li>",
+    },
+}
+
+
 // shorthand func
 function byId(e){return document.getElementById(e);}
 
 // takes a string that contains coords eg - "227,307,261,309, 339,354, 328,371, 240,331"
 // draws a line from each co-ord pair to the next - assumes starting point needs to be repeated as ending point.
 
-function refreshText(type){
-    switch(type){
-        case "tree1":
-            console.log("Tree1");
-            var title=document.getElementById("infoTitle");
-            title.innerHTML="Tree 1";
-
-            var textImage=document.getElementById("infoImage");
-            textImage.setAttribute("src","./images/tree1.jpeg");
-
-            var infoList=document.getElementById("infoList");
-            infoList.innerHTML="";
-            infoList.innerHTML=
-                "<li>This is a tree</li>"+
-                "<li>Cant you fucking see?</li>";
-        break;
-
-        case "plant1":
-            console.log("plant1");
-            var title=document.getElementById("infoTitle");
-            title.innerHTML="Plant 1";
-
-            var textImage=document.getElementById("infoImage");
-            textImage.setAttribute("src","./images/plant1.jpeg");
-
-            var infoList=document.getElementById("infoList");
-            infoList.innerHTML="";
-            infoList.innerHTML=
-                "<li>This is not a tree</li>"+
-                "<li>I dont know what the fuck it is</li>"+
-                "<li>Ñam</li>";
-
-        break;
-    }
-}
-
 function myHover(element)
 {
     var areaClass=element.getAttribute("class");
     switch (areaClass)
     {
-        case 'tree1':
-            drawImage("tree1")
-            refreshText("tree1");
+
+        case 'J':
+            drawImage("J");
+            refreshData(dataBase.J);
+        break;
+        case 'K2':
+            drawImage("K2");
+            refreshData(dataBase.K2);
+        break;
+        case 'K1':
+            drawImage("K1");
+            refreshData(dataBase.K1);
+        break;
+        case 'E':
+            drawImage("E");
+            refreshData(dataBase.E);
+        break;
+        case 'D1':
+            drawImage("D1");
+            refreshData(dataBase.D1);
+        break;
+        case 'D':
+            drawImage("D");
+            refreshData(dataBase.D);
+        break;
+        case 'C':
+            drawImage("C");
+            refreshData(dataBase.C);
             break;
-        case "plant1":
-            drawImage("plant1");
-            refreshText("plant1");
-            break;
+        case "B":
+            drawImage("B");
+            refreshData(dataBase.B);
+        break;
+        case 'A':
+            drawImage("A");
+            refreshData(dataBase.A);
+        break;
     }
 }
 
@@ -79,12 +138,32 @@ function myLeave()
 }
 
 function drawImage(imageId){
+   
+   /*
     //Draw the image specified by the id
     var image=document.getElementById(imageId);
     image.style.visibility="visible";
     //Draw it on the center of the canvas
     hdc.drawImage(image,can.width/4,can.height/4,image.width,image.height);
+    */
 
+}
+
+
+
+function refreshData(X){
+    
+            console.log(X.title);
+            var title=document.getElementById("dataTitle");
+            title.innerHTML=X.title;
+
+            var textImage=document.getElementById("dataImage1");
+            textImage.setAttribute("src",X.img);
+
+            var infoList=document.getElementById("dataList");
+            infoList.innerHTML=X.text;
+       
+    
 }
 
 function resizeAreas(newWidth,newHeigth){
@@ -112,17 +191,26 @@ function resizeImageAndCanvas(){
     //By default lets set its heigth to auto, to mantain ratio
     img.setAttribute("height","auto");
 
-    var winWidth = window.innerWidth;
-    var winHeight= window.innerHeight;
+    var imgParent=img.parentElement;
+
+    console.log(imgParent.offsetWidth);
+    console.log(imgParent.offsetHeight);
+
+    var iw=imgParent.offsetWidth
+    var ih=imgParent.offsetHeight
+
+
+    var winWidth = iw;
+    var winHeight= ih;
     
     //And its width to match the windows
-    img.width=winWidth;
+    img.width=winWidth-2;
 
     //If in dosnt fit in Y
-    if(img.height>winHeight-100){
+    if(img.height>winHeight){
         //Adjust heigth so it does
         img.setAttribute("width","auto")
-        img.height=winHeight-100;
+        img.height=winHeight;
     }
 
     
@@ -169,6 +257,8 @@ function getOriginalValues(){
     }
 }
 
+
+
 function myInit()
 {
     //Load original value variable for sizing
@@ -182,11 +272,15 @@ function myInit()
         resizeImageAndCanvas();
     });
 
+
+
     //Get the canvas
     can = byId('myCanvas');
 
     // get it's context
     hdc = can.getContext('2d');
+
+    
 
 
     //Resize it once when ititializationg

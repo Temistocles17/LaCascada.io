@@ -14,45 +14,51 @@ Retrieved 2026-02-18, License - CC BY-SA 3.0
     </head>
     
     <body onload='myInit()'>
-        
-        <!-- The canvas where the magik will happen-->
         <div class="container">
-            <div class="header">
-                <h2>Los Laureles - Paisajismo</h2>
-            </div>
-            <div class="map">
-                <canvas id='myCanvas'></canvas>     <!-- gets re-positioned in myInit(); -->
-                
-                <!-- images to be loaded later-->
-                <img id="tree1"  src="./images/tree1.jpeg" width="300" height="227" style="display: none;">
-                <img id="plant1"  src="./images/plant1.jpeg" width="300" height="227" style="display: none;">
+            <div class="map"> 
+               
+                <!-- The canvas where the magik will happen-->
+                <canvas id='myCanvas'></canvas>     <!-- gets re-positioned in myInit(); -->            
                 
                 <!-- Background image-->
-                <img src='./images/PLANTAlaureles.png' usemap='#laurelesMap' class='imgmap_css_container' title='PlanoLaureles' alt='PlanoLaureles' id='PLANTAlaureles' width="1000" height="auto"/>
+                <img src='./images/PlanoLaureles.jpg' usemap='#laurelesMap' class='imgmap_css_container' title='PlanoLaureles' alt='PlanoLaureles' id='PLANTAlaureles' width="2552" height="1669"/>
                 
                 <!-- Map of the background image-->
                 <map id='laurelesMap' name='imgmap_css_container_imgmap201293016112'>
                     <!-- The coordinates are for a 1000 width image. Resize accordengl-->
-                    <area onmouseover='myHover(this);' onmouseout='myLeave();' class="tree1"  coords="203,552,35" shape="circle">
-                    <area onmouseover='myHover(this);' onmouseout='myLeave();' class="plant1" coords="509,568,52" shape="circle">
-                    <area onmouseover='myHover(this);' onmouseout='myLeave();' class="plant1" coords="908,122,37" shape="circle">
-                    <area onmouseover='myHover(this);' onmouseout='myLeave();' class="plant1" coords="498,88,38"  shape="circle">
-                    <area onmouseover='myHover(this);' onmouseout='myLeave();' class="tree1"  coords="216,123,35" shape="circle">
+                   
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="A"  class="A" href="" coords="186,898,117" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="B"  class="B" href="" coords="213,673,97" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="C"  class="C" href="" coords="960,416,102" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="D1" class="D1" href="" coords="517,201,89" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="D"  class="D" href="" coords="1813,668,101" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="D"  class="D" href="" coords="1845,1164,129" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="D"  class="D" href="" coords="993,1143,78" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="D1" class="D1" href="" coords="1401,429,72" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="E"  class="E" href="" coords="2134,1342,87" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="E"  class="E" href="" coords="443,1283,73" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="E"  class="E" href="" coords="220,1495,126" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="K1" class="K1" href="" coords="1266,1308,81" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="K2" class="K2" href="" coords="443,1542,90" shape="circle">
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="J"  class="J" href="" coords="892,656,103" shape="circle">
+               
+                
                 </map>
-            
+
             </div>
-            <div class="text">
-                <h3 id="infoTitle"></h3>
-                <img id="infoImage" src="">
-                <ul id="infoList">
-                </ul>
+
+            <div class="data">
+                <h2>Los Laureles</h2>
+                <h3 id="dataTitle"></h3>
+                <img id="dataImage1" />
+                <img id="dataImage2" />
+                <ul id="dataList"></ul>
             </div>
         </div>
         
-
     </body>
 
     <!-- At the end run the scripts. First load resources-->
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
 
 </html>
