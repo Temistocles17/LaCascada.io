@@ -17,15 +17,13 @@ var dataBase={
     A:{
         title:"Borde pileta",
         img:"./images/fotos/A.jpg",
-        text:"<li>Aca se pude agregar descripciones</li>"
-                +"<li>O mas data, si pensas que hace falta</li>",
+        text:"<li>Cortaderas que reflejan sobre el agua</li>",
     },
 
     B:{
         title:"Borde pileta",
         img:"./images/fotos/B.jpg",
-        text:"<li>Aca se pude agregar descripciones</li>"
-                +"<li>O mas data, si pensas que hace falta</li>",
+        text:"<li>Cortaderas que reflejan sobre el agua</li>",
     },
 
     C:{
@@ -54,15 +52,13 @@ var dataBase={
     E:{
         title:"Vista borde completo en pendiente",
         img:"./images/fotos/E.png",
-        text:"<li>Aca se pude agregar descripciones</li>"
-                +"<li>O mas data, si pensas que hace falta</li>",
+        text:"",
     },
 
     K:{
         title:"Cortaderas",
         img:"./images/fotos/K.png",
-        text:"<li>Aca se pude agregar descripciones</li>"
-                +"<li>O mas data, si pensas que hace falta</li>",
+        text:"",
     },
 
 
@@ -79,7 +75,7 @@ var dataBase={
         img:"./images/fotos/F.png",
         text:"<li>Gramineas</li>",
     },
-//----------------------------------------------------------------------------------
+
     O:{
         title:"Arboles Frutales",
         img:"./images/fotos/O.png",
@@ -111,7 +107,7 @@ var dataBase={
     },
 
     X:{
-        title:"Flores",
+        title:"Suculenta",
         img:"./images/fotos/X.png",
         text:"<li>Agaves azules</li>",
     },
