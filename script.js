@@ -111,6 +111,14 @@ var dataBase={
         img:"./images/fotos/X.png",
         text:"<li>Agaves azules</li>",
     },
+
+    L:{
+        title:"Arboles medianos ornamentales",
+        img:"./images/fotos/Z.png",
+        text:"<li>Acacias Casquet Rouge</li>"
+        +"<li>Acer Palmatun</li>"
+        +"<li>Molle - Sauce </li>",
+    },
 }
 
 
@@ -126,6 +134,9 @@ function myHover(element)
     console.log(areaClass);
     switch (areaClass)
     {
+        case 'L':
+            refreshData(dataBase.L);
+        break;
         case 'X':
             refreshData(dataBase.X);
         break;
@@ -180,20 +191,6 @@ function myLeave()
     hdc.clearRect(0, 0, canvas.width, canvas.height);
     clearData();
 }
-
-function drawImage(imageId){
-   
-   /*
-    //Draw the image specified by the id
-    var image=document.getElementById(imageId);
-    image.style.visibility="visible";
-    //Draw it on the center of the canvas
-    hdc.drawImage(image,can.width/4,can.height/4,image.width,image.height);
-    */
-
-}
-
-
 
 function refreshData(X){
     
