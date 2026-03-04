@@ -15,14 +15,14 @@ var originalValues={
 
 var dataBase={
     A:{
-        title:"Borde pileta 1",
+        title:"Borde pileta",
         img:"./images/fotos/A.jpg",
         text:"<li>Aca se pude agregar descripciones</li>"
                 +"<li>O mas data, si pensas que hace falta</li>",
     },
 
     B:{
-        title:"Borde pileta 2",
+        title:"Borde pileta",
         img:"./images/fotos/B.jpg",
         text:"<li>Aca se pude agregar descripciones</li>"
                 +"<li>O mas data, si pensas que hace falta</li>",
@@ -47,8 +47,8 @@ var dataBase={
     D1:{
         title:"Herbaceas y salvias",
         img:"./images/fotos/D1.png",
-        text:"<li>Aca se pude agregar descripciones</li>"
-                +"<li>O mas data, si pensas que hace falta</li>",
+        text:"<li>Gramineas altas</li>"
+                +"<li>Delante varias herbaceas</li>",
     },
 
     E:{
@@ -58,19 +58,13 @@ var dataBase={
                 +"<li>O mas data, si pensas que hace falta</li>",
     },
 
-    K1:{
+    K:{
         title:"Cortaderas",
-        img:"./images/fotos/K1.png",
+        img:"./images/fotos/K.png",
         text:"<li>Aca se pude agregar descripciones</li>"
                 +"<li>O mas data, si pensas que hace falta</li>",
     },
 
-    K2:{
-        title:"Cortaderas",
-        img:"./images/fotos/K2.png",
-        text:"<li>Aca se pude agregar descripciones</li>"
-                +"<li>O mas data, si pensas que hace falta</li>",
-    },
 
     J:{
         title:"Canteros",
@@ -94,10 +88,12 @@ var dataBase={
     },
 
     P:{
-        title:"Pinos",
+        title:"Cortina para vientos",
         img:"./images/fotos/P.png",
-        text:"<li>Cypres Leyland</li>"
-                +"<li>Tuya</li>",
+        text:"<li>Arboles que hacen de barrera</li>"
+                +"<li>Casuarinas - Tuyas</li>"
+                +"<li>Eucalyptus - Cypres - Leyland</li>",
+
     },
 
     M:{
@@ -113,6 +109,12 @@ var dataBase={
                 +"<li>Ipomeas - Jazmin</li>"
                 +"<li>Rosa trepadora - Santa rita</li>",
     },
+
+    X:{
+        title:"Flores",
+        img:"./images/fotos/X.png",
+        text:"<li>Agaves azules</li>",
+    },
 }
 
 
@@ -125,8 +127,12 @@ function byId(e){return document.getElementById(e);}
 function myHover(element)
 {
     var areaClass=element.getAttribute("class");
+    console.log(areaClass);
     switch (areaClass)
     {
+        case 'X':
+            refreshData(dataBase.X);
+        break;
         case 'M':
             refreshData(dataBase.M);
         break;
@@ -145,15 +151,14 @@ function myHover(element)
         case 'J':
             refreshData(dataBase.J);
         break;
-        case 'K2':
-            refreshData(dataBase.K2);
+        case 'K':
+            refreshData(dataBase.K);
         break;
-        case 'K1':
-            refreshData(dataBase.K1);
-        break;
+     
         case 'E':
             refreshData(dataBase.E);
         break;
+        
         case 'D1':
             refreshData(dataBase.D1);
         break;
@@ -177,6 +182,7 @@ function myLeave()
     var canvas = byId('myCanvas');
     //Clear all canvas when stop hovering over
     hdc.clearRect(0, 0, canvas.width, canvas.height);
+    clearData();
 }
 
 function drawImage(imageId){
@@ -203,9 +209,18 @@ function refreshData(X){
             textImage.setAttribute("src",X.img);
 
             var infoList=document.getElementById("dataList");
-            infoList.innerHTML=X.text;
-       
-    
+            infoList.innerHTML=X.text; 
+}
+
+function clearData(){
+    var title=document.getElementById("dataTitle");
+            title.innerHTML="";
+
+            var textImage=document.getElementById("dataImage1");
+            textImage.setAttribute("src","");
+
+            var infoList=document.getElementById("dataList");
+            infoList.innerHTML=""; 
 }
 
 function resizeAreas(newWidth,newHeigth){
