@@ -117,7 +117,7 @@ var dataBase={
         img:"./images/fotos/Z.png",
         text:"<li>Acacias Casquet Rouge</li>"
         +"<li>Acer Palmatun</li>"
-        +"<li>Molle - Sauce </li>",
+        +"<li>Molle - Sauce - Cedron</li>",
     },
 }
 
