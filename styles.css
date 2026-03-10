@@ -57,6 +57,14 @@ canvas
         background-color: rgb(255, 255, 255);
     }
 
+.container .data p
+    {
+        margin: 2%;
+        align-items: center; 
+        font-size: 0.9em;
+ 
+    }
+
 .container .data img
     {
         object-fit: cover;

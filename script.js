@@ -18,12 +18,14 @@ var dataBase={
         title:"Borde pileta",
         img:"./images/fotos/A.jpg",
         text:"<li>Cortaderas que reflejan sobre el agua</li>",
+        intro:"",
     },
 
     B:{
         title:"Borde pileta",
         img:"./images/fotos/B.jpg",
         text:"<li>Cortaderas que reflejan sobre el agua</li>",
+        intro:"",
     },
 
     C:{
@@ -32,6 +34,7 @@ var dataBase={
         text:"<li>Herbaceas</li>"
                 +"<li>Gramineas</li>"
                 +"<li>Cortaderas</li>",
+        intro:"",
     },
 
     D:{
@@ -40,6 +43,7 @@ var dataBase={
         text:"<li>Gramineas</li>"
                 +"<li>Salvia</li>"
                 +"<li>Lavanda</li>",
+        intro:"",
     },
 
     D1:{
@@ -47,18 +51,21 @@ var dataBase={
         img:"./images/fotos/D1.png",
         text:"<li>Gramineas altas</li>"
                 +"<li>Delante varias herbaceas</li>",
+        intro:"",
     },
 
     E:{
         title:"Vista borde completo en pendiente",
         img:"./images/fotos/E.png",
         text:"",
+        intro:"",
     },
 
     K:{
         title:"Cortaderas",
         img:"./images/fotos/K.png",
         text:"",
+        intro:"",
     },
 
 
@@ -67,6 +74,7 @@ var dataBase={
         img:"./images/fotos/J.png",
         text:"<li>Gramineas</li>"+
                 "<li>Salvias</li>",
+        intro:"",
              
     },
 
@@ -74,6 +82,7 @@ var dataBase={
         title:"Cantero",
         img:"./images/fotos/F.png",
         text:"<li>Gramineas</li>",
+        intro:"",
     },
 
     O:{
@@ -81,6 +90,7 @@ var dataBase={
         img:"./images/fotos/O.png",
         text:"<li>Ciruelo - Manzano</li>"
                 +"<li>Higuera - Damasco</li>",
+        intro:"",
     },
 
     P:{
@@ -89,6 +99,7 @@ var dataBase={
         text:"<li>Arboles que hacen de barrera</li>"
                 +"<li>Casuarinas - Tuyas</li>"
                 +"<li>Eucalyptus - Cypres - Leyland</li>",
+        intro:"",
 
     },
 
@@ -96,6 +107,7 @@ var dataBase={
         title:"Maceteros",
         img:"./images/fotos/M.png",
         text:"<li>Hiedras y vincas</li>",
+        intro:"",
     },
 
     H:{
@@ -104,12 +116,15 @@ var dataBase={
         text:"<li>Amphelops - Glicina</li>"
                 +"<li>Ipomeas - Jazmin</li>"
                 +"<li>Rosa trepadora - Santa rita</li>",
+        intro:"",
     },
 
     X:{
         title:"Suculenta",
         img:"./images/fotos/X.png",
         text:"<li>Agaves azules</li>",
+        intro:"",
+
     },
 
     L:{
@@ -118,6 +133,22 @@ var dataBase={
         text:"<li>Acacias Casquet Rouge</li>"
         +"<li>Acer Palmatun</li>"
         +"<li>Molle - Sauce - Cedron</li>",
+        intro:"",
+    },
+
+    INFO:{
+        title:"La Cascada - Paisajismo",
+        img:"",
+        text:"",
+        intro:"<p>Como primer paso se propone realizar una limpieza general del terreno. Actualmente el área se encuentra "+
+                "ocupada por un pajonal de cortaderas, herbáceas espontáneas, cardos y otros yuyos que dificultan la "+
+                "lectura del espacio.<br><br>Esta limpieza permitirá reconocer y valorar la vegetación existente que pueda "+
+                "conservarse, y retirar aquello que no aporta al"+
+                "conjunto.<br><br> A partir de esa base se desarrolla la propuesta paisajística que se presenta en el plano.<br><br>"+
+                "Es importante destacar que para el correcto establecimiento y desarrollo del proyecto resulta "+
+                "imprescindible acompañarlo con un sistema de riego adecuado, que garantice la implantación de las "+
+                "nuevas especies y su buen mantenimiento en el tiempo.<br><br>"+
+                "Sugerimos también limpiar y recuperar el sendero que lleva a la olla de la cascada</p>",
     },
 }
 
@@ -134,6 +165,9 @@ function myHover(element)
     console.log(areaClass);
     switch (areaClass)
     {
+        case 'INFO':
+            refreshData(dataBase.INFO);
+        break;
         case 'L':
             refreshData(dataBase.L);
         break;
@@ -203,6 +237,9 @@ function refreshData(X){
 
             var infoList=document.getElementById("dataList");
             infoList.innerHTML=X.text; 
+
+            var infoIntro=document.getElementById("dataIntro");
+            infoIntro.innerHTML=X.intro;
 }
 
 function clearData(){
@@ -214,6 +251,9 @@ function clearData(){
 
             var infoList=document.getElementById("dataList");
             infoList.innerHTML=""; 
+
+            var infoIntro=document.getElementById("dataIntro");
+            infoIntro.innerHTML="";
 }
 
 function resizeAreas(newWidth,newHeigth){
@@ -293,6 +333,9 @@ function resizeImageAndCanvas(){
 
     //Lastly, resize the areas of the imagmap
     resizeAreas(img.width,img.height);
+
+    //Load info svg
+    
 }
 
 //Used for resizing the imagmap areas
@@ -307,7 +350,19 @@ function getOriginalValues(){
     }
 }
 
+function loadIntro(){
+    var title=document.getElementById("dataTitle");
+    title.innerHTML=dataBase.INFO.title;
 
+    var textImage=document.getElementById("dataImage1");
+    textImage.setAttribute("src",dataBase.INFO.img);
+
+    var infoList=document.getElementById("dataList");
+    infoList.innerHTML=dataBase.INFO.text; 
+
+    var infoIntro=document.getElementById("dataIntro");
+    infoIntro.innerHTML=dataBase.INFO.intro;
+}
 
 function myInit()
 {
@@ -335,4 +390,8 @@ function myInit()
 
     //Resize it once when ititializationg
     resizeImageAndCanvas();
+
+    //Load intro data
+    loadIntro();
+
 }
